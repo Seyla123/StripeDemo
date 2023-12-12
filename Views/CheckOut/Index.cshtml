@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ProductEnity>
+
+	<br />
+
+	<table class="table table-responsive table-light table-bordered" style="width:100%">
+		<tr>
+			<th>Product Name : </th>
+			<th>Rate : </th>
+			<th>Quanity : </th>
+			<th>Product Image : </th>
+			<th>Total : </th>
+		</tr>
+		@foreach(var item in Model)
+	{
+		<tr>
+			<td>@item.Product</td>
+			<td>@item.Rate</td>
+			<td>@item.Quanity</td>
+			<td><img src="@item.ImagePath" style="width:130px; height:150px;" /></td>
+			<td>@(item.Rate * item.Quanity)</td>
+
+		</tr>
+		
+	}
+		
+	</table>
+	<br />
+	<p>
+		<a asp-action="CheckOut" asp-controller="CheckOut">Check Out</a>
+	</p>
